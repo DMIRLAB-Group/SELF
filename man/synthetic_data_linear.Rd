@@ -23,5 +23,5 @@ Synthetic linear data base on the graph. The noises are sampled from the super-g
 }
 \examples{
 G<-matrix(c(0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0),nrow = 4,ncol = 4)
-data=synthetic_data_linear(G,500)
+data=synthetic_data_linear(G,100)
 }

@@ -2,16 +2,14 @@
 
 ## Overview
 
-This Package provides SELF criteria to learn causal structure. 
+Provides the SELF criteria to learn causal structure. 
 
-Details of the algorithm can be found in "SELF: A Structural Equation Embedded Likelihood Framework for Causal Discovery"(AAAI2018).
+Details of the algorithm can be found in "SELF: A Structural Equation Embedded Likelihood Framework for Causal Discovery" (AAAI2018).
 
 ## Installation
 
 ```{r, eval = FALSE}
-#install.packages("SELF")
-install.packages("devtools")
-devtools::install_github("DMIRLAB-Group/SELF")
+install.packages("SELF")
 ```
 
 ### Quick Start

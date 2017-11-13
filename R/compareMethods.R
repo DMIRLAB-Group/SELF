@@ -1,5 +1,5 @@
-#' @title mmpc algorithm and additive noise model
-#' @description Use the mmpc algorithm to learn a skeleton and use anm to recognize the direction
+#' @title mmpc algorithm with additive noise model
+#' @description The nonlinear data comparison algorithm. We use the mmpc algorithm to learn a causal skeleton and use ANM to recognize the direction
 #' @param data The data
 #' @export
 mmpcAnm<-function(data){

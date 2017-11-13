@@ -2,7 +2,7 @@
 % Please edit documentation in R/compareMethods.R
 \name{mmpcAnm}
 \alias{mmpcAnm}
-\title{mmpc algorithm and additive noise model}
+\title{mmpc algorithm with additive noise model}
 \usage{
 mmpcAnm(data)
 }
@@ -10,5 +10,5 @@ mmpcAnm(data)
 \item{data}{The data}
 }
 \description{
-Use the mmpc algorithm to learn a skeleton and use anm to recognize the direction
+The nonlinear data comparison algorithm. We use the mmpc algorithm to learn a causal skeleton and use ANM to recognize the direction
 }

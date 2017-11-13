@@ -63,7 +63,7 @@ randomGraph<-function(dim,indegree){
 #' @export
 #' @examples
 #' G<-matrix(c(0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0),nrow = 4,ncol = 4)
-#' data=synthetic_data_nonlinear(G,500)
+#' data=synthetic_data_nonlinear(G,100)
 synthetic_data_nonlinear<-function(G,sample_num,ratio=1,return_noise=FALSE){
   f<-function(x){
     return(data.frame(x^2,x^3,x^4,sin(x),sin(x^2)))
@@ -136,7 +136,7 @@ synthetic_data_nonlinear<-function(G,sample_num,ratio=1,return_noise=FALSE){
 #' @export
 #' @examples
 #' G<-matrix(c(0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0),nrow = 4,ncol = 4)
-#' data=synthetic_data_linear(G,500)
+#' data=synthetic_data_linear(G,100)
 synthetic_data_linear<-function(G,sample_num,ratio=1,return_noise=FALSE){
   if(is.null(colnames(G))){
     g<-empty.graph(paste0("V",1:ncol(G)))
