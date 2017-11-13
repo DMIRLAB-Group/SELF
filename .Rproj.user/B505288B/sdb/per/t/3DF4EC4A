@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: SELF\nType: Package\nTitle: A Structural Equation Embedded Likelihood Framework for Causal Discovery\nVersion: 0.1.0\nAuthors@R: c(\n        person(\"Ruichu\",\"Cai\",email=\"cairuichu@gmail.com\",role=c(\"ths\")),\n        person(\"Jie\",\"Qiao\",email=\"qiaojie2004@vip.qq.com\",role=c(\"aut\",\"cre\")),\n        person(\"Zhenjie\",\"Zhang\",email=\"zhenjie@adsc.com.sg\",role=c(\"ths\")),\n        person(\"Zhifeng\",\"Hao\",email=\"zfhao@gdut.edu.cn\",role=c(\"ths\"))\n        )\nAuthor: Ruichu Cai [aut],\n    Jie Qiao [aut, cre],\n    Zhenjie Zhang [ths],\n    Zhifeng Hao [ths]\nMaintainer: Jie Qiao <qiaojie2004@vip.qq.com>\nDescription: This Package provides SELF criteria to learn causal structure. Details of the algorithm can be found in \"SELF: A Structural Equation Embedded Likelihood Framework for Causal Discovery\"(AAAI2018).\nLicense: GPL-2\nLazyData: true\nImports:\n    data.table (>= 1.10.4),\n    xgboost (>= 0.6-4),\n    Rcpp (>= 0.12.10),\n    CompareCausalNetworks (>= 0.1.0),\n    bnlearn (>= 4.1.1)\nLinkingTo: Rcpp\nRoxygenNote: 6.0.1\nEncoding: UTF-8\n",
+    "created" : 1510541571657.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2548478034",
+    "id" : "3DF4EC4A",
+    "lastKnownWriteTime" : 1510542415,
+    "last_content_update" : 1510542415668,
+    "path" : "~/GitLab/SELF/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

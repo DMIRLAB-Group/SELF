@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: bicanm\nType: Package\nTitle: A BIC Score Base Causal Structure Learning With XGBoost\nVersion: 0.1.0\nAuthor@R: person(\"Jie\",\"Qiao\",email=\"qiaojie2004@vip.qq.com\",role=c(\"aut\",\"cre\"))\nAuthor: Jie Qiao [aut, cre]\nMaintainer: Jie Qiao <qiaojie2004@vip.qq.com>\nDescription: This Package provides a BIC score base on additive noise model for causal structure leaning. \n    And we design a fast hill-climbing algorithm for it. We take xgboost as our regressor to calculate the \n    distribulence between parents and child. Our methods outperform other methods in linear and nonlinear data.\nLicense: MIT\nEncoding: UTF-8\nLazyData: true\nImports:\n    data.table (>= 1.10.4),\n    xgboost (>= 0.6-4),\n    caret (>= 6.0-76),\n    Rcpp (>= 0.12.10) \nLinkingTo: Rcpp\nRoxygenNote: 6.0.1\n",
+    "created" : 1493565147529.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "135079160",
+    "id" : "7F49905E",
+    "lastKnownWriteTime" : 1493622311,
+    "last_content_update" : 1493622311,
+    "path" : "~/bicanm/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

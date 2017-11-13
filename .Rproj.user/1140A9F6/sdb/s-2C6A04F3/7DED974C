@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1504236531954.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "7DED974C",
+    "lastKnownWriteTime" : 8227647101420268917,
+    "last_content_update" : 1504236531954,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "context" : "package:bnlearn:::score"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_code_browser"
+}

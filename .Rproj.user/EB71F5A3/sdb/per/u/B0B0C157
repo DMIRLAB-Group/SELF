@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "pred<-matrix(c(0,0,0,0,1,0,1,1,0),nrow=3,ncol=3)\nreal<-matrix(c(0,0,0,0,1,0,1,0,0),nrow=3,ncol=3)\nindicators(pred,real)\n\n",
+    "created" : 1493625059982.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2989565244",
+    "id" : "B0B0C157",
+    "lastKnownWriteTime" : 7310027617562805065,
+    "last_content_update" : 1493625171967,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

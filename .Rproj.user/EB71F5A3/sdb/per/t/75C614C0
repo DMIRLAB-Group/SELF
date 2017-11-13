@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#include <Rcpp.h>\n#include <iostream>\nusing namespace std;\nusing namespace Rcpp;\n\nbool* walked;\nbool dfsCheckCircuit(IntegerMatrix G,int current)\n{\n  int i;\n  int Node_num=G.ncol();\n  if (walked[current])\n    return true;\n  walked[current] = true;\n  for (i = 0;i <Node_num;i++)\n  {\n    if (G(current,i))\n      if (dfsCheckCircuit(G,i))\n        return true;\n  }\n  walked[current] = false;\n  return false;\n}\n\n\nbool NoCheckCircuit(IntegerMatrix G ,int start)\n{\n  int Node_num=G.ncol();\n  walked=new bool[Node_num];\n  int i;\n  for(i=0;i<Node_num;i++)\n    walked[i]=false;\n  if (dfsCheckCircuit(G,start)){\n    delete[] walked;\n    return false;\n  }\n  delete[] walked;\n  return true;\n}\n\n\n\nbool isDegreeRight(IntegerMatrix G,int i=-1){\n\n  int ncol=G.ncol();\n  int indegree,outdegree;\n  bool muti=false;\n  if(i<0){\n    i=0;\n    muti=true;\n  }\n  if(!muti){\n    indegree=0;\n    outdegree=0;\n    for(int j=0;j<ncol;++j){\n      if(i!=j){\n        outdegree=outdegree+G(i,j);\n        indegree=indegree+G(j,i);\n      }\n    }\n    //Rprintf(\"outdegree=%d,indegree=%d\",outdegree,indegree);\n    if(indegree>2||(indegree+outdegree)==0)\n      return false;\n  }else{\n    for(;i<ncol;++i){\n      indegree=0;\n      outdegree=0;\n      for(int j=0;j<ncol;++j){\n        if(muti&&i!=j){\n          outdegree=outdegree+G(i,j);\n          indegree=indegree+G(j,i);\n        }\n      }\n      if(indegree>2||(indegree+outdegree)==0)\n        return false;\n    }\n  }\n\n  return true;\n}\n\n// [[Rcpp::export]]\nstd::vector<IntegerMatrix> AddDelReverseLine(IntegerMatrix G,int i=0,int j=0){\n\n  G=clone(G);\n  int nrow=G.nrow();\n  int ncol=G.ncol();\n  vector<IntegerMatrix> GList;\n  if(i>=1&&j>=1){\n    i--;\n    j--;\n    if(G(i,j)==1){\n      G(i,j)=0; //del\n      G(j,i)=0;\n\n        GList.push_back(clone(G));\n\n    }else{\n      G(i,j)=1; //add\n      G(j,i)=0;\n      if(NoCheckCircuit(G,j)){\n        GList.push_back(clone(G));\n      }\n    }\n    G(i,j)=0; //reverse\n    G(j,i)=1;\n    if(NoCheckCircuit(G,i)){\n      GList.push_back(clone(G));\n    }\n\n    return GList;\n  }\n  for(int i=0;i<ncol;++i){\n    for(int j=0;j<nrow;++j){\n      if(i!=j){\n          G(i,j)=!G(i,j);\n          if(isDegreeRight(G)&&NoCheckCircuit(G,i)){\n            GList.push_back(clone(G));\n          }\n          G(i,j)=!G(i,j);\n         if(G(i,j)&&!G(j,i)){ //zhuanbian\n           G(i,j)=0;\n           G(j,i)=1;\n           if(isDegreeRight(G)&&NoCheckCircuit(G,j)){\n             GList.push_back(clone(G));\n           }\n           G(i,j)=1;\n           G(j,i)=0;\n         }\n\n      }\n    }\n  }\n\n  if(GList.size()==0){\n    for(int i=0;i<ncol;++i){\n      if(!isDegreeRight(G,i)){\n        for(int j=0;j<ncol;++j){\n          if(i!=j&&G(i,j)!=1){\n            G(i,j)=1;\n            if(isDegreeRight(G,j)&&NoCheckCircuit(G,j)){\n              return(AddDelReverseLine(G));\n            }else{\n              G(i,j)=0;\n            }\n          }\n\n        }\n\n      }\n    }\n  }\n  return GList;\n}\n\n\n",
+    "created" : 1493606497200.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2688888707",
+    "id" : "75C614C0",
+    "lastKnownWriteTime" : 1493624289,
+    "last_content_update" : 1493624289207,
+    "path" : "~/bicanm/src/AddDelReverse.cpp",
+    "project_path" : "src/AddDelReverse.cpp",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "cpp"
+}

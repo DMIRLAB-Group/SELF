@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(self)\nn=40\nG=matrix(0,nrow = n,ncol = n)\nG[upper.tri(G)]<-1\nG<-G-diag(G)\ndata=synthetic_data_linear(G,4000)\nfitG<-fhc(data,min_increase =0.01,booster=\"gblinear\")\nindicators(fitG,G)\nfitG_bak=fitG\nfitG2<-fhc(data,G=fitG,booster=\"gblinear\")\nindicators(fitG2,G)\nlibrary(bnlearn)\nindicators(amat(hc(data,score=\"bic-g\")),G)\n\nfitG3<-fhc(data,G=fitG2,booster=\"gblinear\",score_type = \"log\")\nindicators(fitG,G)\nindicators(fitG2,G)\nindicators(fitG3,G)\n\nlibrary(self)\nlibrary(bnlearn)\nset.seed(0)\nG<-matrix(0,nrow = 10,ncol = 10)\nG[upper.tri(G)]<-1\ndata=synthetic_data_linear(G,4000)\nfitG<-fhc(data,score_type = \"log\")\nindicators(fitG,G)\nindicators(as(pcalg::lingam(data),\"amat\"),G)\nindicators(amat(hc(data,score=\"bic-g\")),G)\nself:::score_ml_cd(G,data,score_type=\"bic\",booster = \"gblinear\",gamma=10,nrounds = 30,bw =\"nrd0\")\nset.seed(0)\nself:::score_ml_cd(G,data,score_type=\"bic\",booster = \"gblinear\",gamma=10,nrounds = 500,bw =\"nrd0\",seed=0)\n\n",
+    "created" : 1496218194688.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2040084063",
+    "id" : "4833D626",
+    "lastKnownWriteTime" : 80,
+    "last_content_update" : 1496281711695,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

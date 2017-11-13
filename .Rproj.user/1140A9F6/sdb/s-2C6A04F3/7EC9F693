@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(self)\nlibrary(pcalg)\nset.seed(0)\nn=20\nG=matrix(0,nrow = n,ncol = n)\nG[upper.tri(G)]<-1\nG=G-diag(G)\nG=randomGraph(20,2)\ndata=synthetic_data_linear(G,4000)\nfitG<-fhc(data,min_increase = 0.01,score_type=\"bic\",booster = \"ICA\")\np;[fitG2<-fhc(data,fitG,score_type=\"bic\",booster = \"gblinear\")\n\nindicators(fitG3,G)\nfit=lingam(data)\nfit=as(fit,\"amat\")\nindicators(fit,G)\nfitG2<-fhc(data,G=G,score_type = \"log\",booster = \"gblinear\")\nindicators(fitG2,G)\n\nset.seed(0)\nG<-matrix(c(0,0,1,0),nrow=2,ncol=2)\nG2<-matrix(c(0,0,1,0),nrow=2,ncol=2,byrow = T)\nx=rlnorm(4000)\ny=2*x+rnorm(4000)\ndata=data.frame(x,y)\nfhc(data,G2,score_type = \"log\",booster = \"gblinear\",score_type = \"bic\", gamma = 5, nrounds = 500)\n\nself:::score_ml_cd(G,data,booster = \"gblinear\",score_type = \"bic\", nrounds = 500,bw = \"nrd0\",eta=0.01)\n",
+    "created" : 1496218076407.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3262143961",
+    "id" : "7EC9F693",
+    "lastKnownWriteTime" : 3196183945295977248,
+    "last_content_update" : 1496627043592,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled6"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

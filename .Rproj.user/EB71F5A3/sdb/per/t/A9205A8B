@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#' @title Calculate the f1,precision,recall score of the graph\n#' @description Calculate the f1,precision,recall score of the graph\n#' @param pred Your predicted graph\n#' @param real Your real graph\n#' @return f1,precision,recall score.\n#' @export\n#' @examples\n#' pred<-matrix(c(0,0,0,0,1,0,1,1,0),nrow=3,ncol=3)\n#' real<-matrix(c(0,0,0,0,1,0,1,0,0),nrow=3,ncol=3)\n#' indicators(pred,real)\nindicators<-function(pred,real){\n  TP=sum((real==1)&(pred==1))\n  FN=sum((real==1)&(pred==0))\n  FP=sum((real==0)&(pred==1))\n  TN=sum((real==0)&(pred==0))\n  recall=TP/(TP+FN)\n  precision=TP/(TP+FP)\n  F1=2*precision*recall/(precision+recall)\n  data.frame(recall,precision,F1)\n}\nparents<-function(G,i){\n  which(G[,i]==1)\n}\ncompareG<-function(G1,G2){\n  which(colSums(abs(G1-G2))>0)\n}\n",
+    "created" : 1493564971694.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1438091299",
+    "id" : "A9205A8B",
+    "lastKnownWriteTime" : 1493625164,
+    "last_content_update" : 1493625164030,
+    "path" : "~/bicanm/R/utility_functions.R",
+    "project_path" : "R/utility_functions.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(bicanm)\nlibrary(bnlearn)\nlibrary(pcalg)\nsetwd(\"/home/qj/zhengproj/R/Project/zheng_project\")\n\nfor(i in 1:10){\n  g<-read.net(\"alarm.net\")\n  set.seed(i)\n  data<-synthetic_data_linear(amat(g),4000)\n  file=sprintf(\"data/real/alarm4000_linear_final_%d.csv\",i)\n  fwrite(data,file,col.names =F)\n  \n  g<-read.net(\"child.net\")\n  set.seed(i)\n  data<-synthetic_data_linear(amat(g),4000)\n  file=sprintf(\"data/real/child4000_linear_final_%d.csv\",i)\n  fwrite(data,file,col.names =F)\n  \n  g<-read.net(\"win95pts.net\")\n  set.seed(i)\n  data<-synthetic_data_linear(amat(g),4000)\n  file=sprintf(\"data/real/win95pts4000_linear_final_%d.csv\",i)\n  fwrite(data,file,col.names =F)\n  \n  g<-read.net(\"pathfinder.net\")\n  set.seed(i)\n  data<-synthetic_data_linear(amat(g),4000)\n  file=sprintf(\"data/real/pathfinder4000_linear_final_%d.csv\",i)\n  fwrite(data,file,col.names =F)\n  \n}\ng<-read.net(\"alarm.net\")\nfwrite(as.data.frame(amat(g)),\"data/real/alarm.csv\",col.names =F)\ng<-read.net(\"child.net\")\nfwrite(as.data.frame(amat(g)),\"data/real/child.csv\",col.names =F)\ng<-read.net(\"win95pts.net\")\nfwrite(as.data.frame(amat(g)),\"data/real/win95pts.csv\",col.names =F)\ng<-read.net(\"pathfinder.net\")\nfwrite(as.data.frame(amat(g)),\"data/real/pathfinder.csv\",col.names =F)\n",
+    "created" : 1494426894984.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3418832778",
+    "id" : "C9A6DC06",
+    "lastKnownWriteTime" : 8241429508104650751,
+    "last_content_update" : 1494427369240,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

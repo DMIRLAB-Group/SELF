@@ -1,0 +1,27 @@
+Package: SELF
+Type: Package
+Title: A Structural Equation Embedded Likelihood Framework for Causal Discovery
+Version: 0.1.0
+Authors@R: c(
+        person("Ruichu","Cai",email="cairuichu@gmail.com",role=c("ths")),
+        person("Jie","Qiao",email="qiaojie2004@vip.qq.com",role=c("aut","cre")),
+        person("Zhenjie","Zhang",email="zhenjie@adsc.com.sg",role=c("ths")),
+        person("Zhifeng","Hao",email="zfhao@gdut.edu.cn",role=c("ths"))
+        )
+Author: Ruichu Cai [ths],
+    Jie Qiao [aut, cre],
+    Zhenjie Zhang [ths],
+    Zhifeng Hao [ths]
+Maintainer: Jie Qiao <qiaojie2004@vip.qq.com>
+Description: This Package provides SELF criteria to learn causal structure. Details of the algorithm can be found in "SELF: A Structural Equation Embedded Likelihood Framework for Causal Discovery"(AAAI 2018).
+License: GPL-2
+LazyData: true
+Imports:
+    data.table (>= 1.10.4),
+    xgboost (>= 0.6-4),
+    Rcpp (>= 0.12.10),
+    CompareCausalNetworks (>= 0.1.0),
+    bnlearn (>= 4.1.1)
+LinkingTo: Rcpp
+RoxygenNote: 6.0.1
+Encoding: UTF-8

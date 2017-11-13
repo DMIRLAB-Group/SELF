@@ -1,0 +1,44 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/Users/QJ/Documents/bicanm/src/AddDelReverse.cpp",
+                "kind" : 6,
+                "line" : 7,
+                "name" : "dfsCheckCircuit(IntegerMatrix, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@dfsCheckCircuit#$@N@Rcpp@C@Matrix>#VI13#@N@Rcpp@CT>1#T@PreserveStorage#I#"
+            },
+            {
+                "column" : 6,
+                "file" : "C:/Users/QJ/Documents/bicanm/src/AddDelReverse.cpp",
+                "kind" : 6,
+                "line" : 25,
+                "name" : "NoCheckCircuit(IntegerMatrix, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@NoCheckCircuit#$@N@Rcpp@C@Matrix>#VI13#@N@Rcpp@CT>1#T@PreserveStorage#I#"
+            },
+            {
+                "column" : 6,
+                "file" : "C:/Users/QJ/Documents/bicanm/src/AddDelReverse.cpp",
+                "kind" : 6,
+                "line" : 42,
+                "name" : "isDegreeRight(IntegerMatrix, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@isDegreeRight#$@N@Rcpp@C@Matrix>#VI13#@N@Rcpp@CT>1#T@PreserveStorage#I#"
+            },
+            {
+                "column" : 28,
+                "file" : "C:/Users/QJ/Documents/bicanm/src/AddDelReverse.cpp",
+                "kind" : 6,
+                "line" : 82,
+                "name" : "AddDelReverseLine(IntegerMatrix, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@AddDelReverseLine#$@N@Rcpp@C@Matrix>#VI13#@N@Rcpp@CT>1#T@PreserveStorage#I#I#"
+            }
+        ],
+        "file" : "C:/Users/QJ/Documents/bicanm/src/AddDelReverse.cpp",
+        "file_last_write" : 1493624289
+    }
+]

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(self)\n#实验1----\nset.seed(0)\nA=rnorm(4000)\nB=rnorm(4000)\nX=scale(A^2+B^2)+rnorm(4000)\nC=scale(X^2)+rnorm(4000)\nD=scale(X^2)+rnorm(4000)\ndata=data.frame(A,B,X,C,D)\nG<-matrix(0,nrow=5,ncol=5)\ns=c(0,1,2,4,5)\n#实验2----\nset.seed(0)\nE=rnorm(4000)\nA=scale(E^2)+rnorm(4000)\nB=rnorm(4000)\nX=scale(A^2+B^2)+rnorm(4000)\nC=scale(X^2)+rnorm(4000)\nD=scale(X^2)+rnorm(4000)\ndata=data.frame(A,B,X,C,D,E)\nG<-matrix(0,nrow=6,ncol=6)\ns=c(0,1,2,4,5,6)\nscore=c()\nfor(i in 1:length(s)){\n  if(s[i]!=0){\n    G[s[i],3]=1\n  }\n  sc<-self:::score_ml_cd(G,D=data,min_increase=0.01,gamma=10,score_type = \"log\", file = \"\", save_model = FALSE, bw = \"nrd0\", booster = \"gbtree\",\n                         nrounds = 30)\n  score[i]=sc[3]\n  print(score[i])\n}  \n\nplot(score)\ntitle(\"log\")\n",
+    "created" : 1495695224745.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1866756002",
+    "id" : "29E12A52",
+    "lastKnownWriteTime" : 2,
+    "last_content_update" : 1495695274704,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled5"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

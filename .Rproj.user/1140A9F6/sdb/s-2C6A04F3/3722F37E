@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(bnlearn)\ng<-read.net(\"alarm.net\")\nset.seed(0)\ndata=synthetic_data_nonlinear(amat(g),4000)\nfitG<-fhc(data,gamma=10,booster = \"gbtree\",save_model=T,file=\"exp_alarm4000_top5\",min_increase = 0.02,topk = 5)\n\nfitG<-fhc(data,gamma=10,booster = \"gbtree\",save_model=T,file=\"exp_alarm4000_top2\",min_increase = 0.02,topk = 2)\n\nfitG<-self::fhc(data,gamma=10,booster = \"gbtree\",save_model=T,file=\"exp_alarm4000_top100\",min_increase = 0.02,topk = 100)\n\ni=15\nset.seed(1)\nG=randomGraph(dim=df$dim[i],indegree=df$indegree[i])\ndata=synthetic_data_linear(G,df$samplesize[i])\nfile=sprintf(\"exp_random_l_size%d_dim%d_indegree%g_top5\",df$samplesize[i],df$dim[i],df$indegree[i])\nif(!file.exists(file)){\n  dir.create(file)\n}\nsave(G,file=paste0(file,\"/realG.RData\"))\nfitG<-self::fhc(data,booster = \"gblinear\",save_model=T,file=file,min_increase = 0.01,topk = 5)\n\ni=15\nset.seed(0)\nG=randomGraph(dim=df$dim[i],indegree=df$indegree[i])\ndata=synthetic_data_linear(G,df$samplesize[i])\nfile=sprintf(\"exp_random_l_size%d_dim%d_indegree%g_top5_seed0\",df$samplesize[i],df$dim[i],df$indegree[i])\nif(!file.exists(file)){\n  dir.create(file)\n}\nsave(G,file=paste0(file,\"/realG.RData\"))\nfitG<-self::fhc(data,booster = \"gblinear\",save_model=T,file=file,min_increase = 0.01,topk = 5)\n",
+    "created" : 1494665249091.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "4088184740",
+    "id" : "3722F37E",
+    "lastKnownWriteTime" : 3255295627468218995,
+    "last_content_update" : 1494679345378,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled4"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

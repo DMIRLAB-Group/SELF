@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# Hello, world!\n#\n# This is an example function named 'hello'\n# which prints 'Hello, world!'.\n#\n# You can learn more about package authoring with RStudio at:\n#\n#   http://r-pkgs.had.co.nz/\n#\n# Some useful keyboard shortcuts for package authoring:\n#\n#   Build and Reload Package:  'Ctrl + Shift + B'\n#   Check Package:             'Ctrl + Shift + E'\n#   Test Package:              'Ctrl + Shift + T'\n\n#' @useDynLib bicanm\n#' @importFrom Rcpp sourceCpp\n#' @importFrom caret dummyVars\n#' @import data.table\nNULL\n",
+    "created" : 1493621925182.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "330376961",
+    "id" : "A2F8EF73",
+    "lastKnownWriteTime" : 1493624678,
+    "last_content_update" : 1493624678122,
+    "path" : "~/bicanm/R/roxygen.R",
+    "project_path" : "R/roxygen.R",
+    "properties" : {
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

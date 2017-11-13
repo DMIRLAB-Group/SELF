@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "df1=expand.grid(samplesize=4000,dim=c(20,30,40,50,60),indegree=1.5)\ndf2=expand.grid(samplesize=c(1000,2000,4000,6000,8000),dim=40,indegree=1.5)\ndf3=expand.grid(samplesize=4000,dim=40,indegree=c(0.5,1,1.5,2,2.5))\ndf=rbind(df1,df2,df3)\nresult<-data.frame()\n\n#nonlinear\n    i=8\n    set.seed(1)\n    G=randomGraph(dim=df$dim[i],indegree=df$indegree[i])\n    data=synthetic_data_nonlinear(G,df$samplesize[i])\n    file=sprintf(\"exp_random_nl_size%d_dim%d_indegree%g\",df$samplesize[i],df$dim[i],df$indegree[i])\n\n    system.time(fitG<-fhc(D=data,min_increase = 0.01,gamma = 10,save_model=F ,nthread=8,verbose = T))\n    system.time(fitG2<-mmpcAnm(data))\n    term=data.frame(df[i,],indicators(fitG,G),type=\"nonlinear\",method=\"SELF\")\n    result=rbind(result,term)\n    print(result)\n\n    set.seed(1)\n    G=randomGraph(dim=df$dim[i],indegree=df$indegree[i])\n    data=synthetic_data_linear(G,df$samplesize[i])\n    system.time(fitG3<-fhc(D=data,min_increase = 0.01,booster = \"lm\"))\n\n    set.seed(1)\n    G=randomGraph(dim=df$dim[i],indegree=df$indegree[i])\n    data=synthetic_data_linear(G,df$samplesize[i])\n    system.time(fitG3<-pcalg::)\n#linear\nfor(j in 1:10){\n  for(i in 11:15){\n    set.seed(j)\n    G=randomGraph(dim=df$dim[i],indegree=df$indegree[i])\n    data=synthetic_data_linear(G,df$samplesize[i],rate=1)\n    fitG<-fhc(D=data,min_increase = 0.01,alpha=20,lambda=10,booster = \"gblinear\",save_model =F,nthread=3)\n    term=data.frame(df[i,],indicators(fitG,G),type=\"linear\",method=\"SELF2\")\n    result=rbind(result,term)\n    print(result)\n  }\n}\n",
+    "created" : 1508243532923.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "673524761",
+    "id" : "69026F60",
+    "lastKnownWriteTime" : 1508251000,
+    "last_content_update" : 1508292332392,
+    "path" : "~/zhengproj/R/Project/zheng_project/rebuttal.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled7"
+    },
+    "relative_order" : 19,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

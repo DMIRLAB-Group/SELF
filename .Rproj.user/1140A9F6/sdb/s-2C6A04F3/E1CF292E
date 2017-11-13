@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "library(self)\nlibrary(bnlearn)\nlibrary(ggplot2)\nlibrary(data.table)\nsetwd(\"/home/qj/zhengproj/R/Project/zheng_project\")\n\n\n\n\nlinear=F\nresult=data.frame()\n#for(graph in c(\"alarm\",\"win95pts\")){\n#g<-read.net(paste0(graph,\".net\"))\n#G<-amat(g)\nfor(times in 1:10){\n  print(times)\n  set.seed(times)\n  G=randomGraph(40,1.5)\n  n=ncol(G)\n\n  for(r in seq(0.5,5,0.5)){\n    if(linear){\n      data=synthetic_data_linear(G,4000,ratio=r,return_noise = T)\n    }else{\n      data=synthetic_data_nonlinear(G,4000,ratio=r,return_noise = T)\n    }\n\n    noise=data$noise\n    data=data$data\n    Dn=nrow(data)\n    r1=c()\n    r2=c()\n    df1=data.frame()\n    df2=data.frame()\n    for(i in 1:n){\n      pa<-self:::parents(G,i)\n      if(length(pa)!=0){\n        for(j in 1:length(pa)){\n          node_out=sample(setdiff(1:n,c(i,pa)),1)\n          #node_in=sample(1:length(pa),1)\n          #node_in=pa[node_in]\n          node_in=pa[j]\n          G1<-G\n          subG_org1<-G1[c(i,pa,node_out),c(i,pa,node_out)]\n          if(linear){\n            s1=sum(self:::score_ml_cd(subG_org1,data[,c(i,pa,node_out)],bw=\"nrd0\",booster=\"lm\",gamma=10,nrounds=30,score_type = \"log\"))\n          }else{\n            s1=sum(self:::score_ml_cd(subG_org1,data[,c(i,pa,node_out)],bw=\"nrd0\",booster=\"gbtree\",gamma=10,nrounds=30,score_type = \"log\"))\n          }\n\n          G1[node_out,i]<-1\n          subG1<-G1[c(i,pa,node_out),c(i,pa,node_out)]\n          if(linear){\n            s2=sum(self:::score_ml_cd(subG1,data[,c(i,pa,node_out)],bw=\"nrd0\",booster=\"lm\",gamma=10,nrounds=30,score_type = \"log\"))\n          }else{\n            s2=sum(self:::score_ml_cd(subG1,data[,c(i,pa,node_out)],bw=\"nrd0\",booster=\"gbtree\",gamma=10,nrounds=30,score_type = \"log\"))\n          }\n\n          signal_var=var(data[,i]-noise[,i])\n          noise_var=var(noise[,i])\n\n          G2<-G\n          subG_org2<-G2[c(i,pa),c(i,pa)]\n          if(linear){\n            s3=sum(self:::score_ml_cd(subG_org2,data[,c(i,pa,node_in)],bw=\"nrd0\",booster=\"lm\",gamma=10,nrounds=30,score_type = \"log\"))\n          }else{\n            s3=sum(self:::score_ml_cd(subG_org2,data[,c(i,pa,node_in)],bw=\"nrd0\",booster=\"gbtree\",gamma=10,nrounds=30,score_type = \"log\"))\n          }\n\n\n          G2[node_in,i]<-0\n          subG2<-G2[unique(c(i,pa,node_in)),unique(c(i,pa,node_in))]\n          if(linear){\n            s4=sum(self:::score_ml_cd(subG2,data[,c(i,pa,node_in)],bw=\"nrd0\",booster=\"lm\",gamma=10,nrounds=30,score_type = \"log\"))\n          }else{\n            s4=sum(self:::score_ml_cd(subG2,data[,c(i,pa,node_in)],bw=\"nrd0\",booster=\"gbtree\",gamma=10,nrounds=30,score_type = \"log\"))\n          }\n\n          r1=c(r1,(s3-s4)*Dn)#增加一个真实父母增加的评分\n          r2=c(r2,(s2-s1)*Dn)#增加一个其他的结点增加的评分\n          df1=rbind(df1,data.frame(graph=times,ratio=r,signal_noise=signal_var/noise_var,type=1,score=(s3-s4)*Dn))\n          df2=rbind(df2,data.frame(graph=times,ratio=r,signal_noise=signal_var/noise_var,type=2,score=(s2-s1)*Dn))\n        }\n\n      }\n    }\n\n    result=rbind(result,rbind(df1,df2))\n  }\n}\n\nresult=as.data.table(result)\nfwrite(result,\"result_linear50.csv\")\n\nfwrite(result,\"result_nonlinear50.csv\")\n",
+    "created" : 1504230597185.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3675675730",
+    "id" : "E1CF292E",
+    "lastKnownWriteTime" : 1504859664,
+    "last_content_update" : 1504859664698,
+    "path" : "~/zhengproj/R/Project/zheng_project/proof_assum.R",
+    "project_path" : null,
+    "properties" : {
+        "docOutlineVisible" : "1",
+        "tempName" : "Untitled7"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

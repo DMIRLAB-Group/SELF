@@ -1,0 +1,13 @@
+{
+    "path" : "~/zhengproj/R/Project/zheng_project",
+    "sortOrder" : [
+        {
+            "ascending" : false,
+            "columnIndex" : 4
+        },
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

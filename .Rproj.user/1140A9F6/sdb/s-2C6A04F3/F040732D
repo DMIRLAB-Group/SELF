@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' @useDynLib self, .registration = TRUE\n#' @importFrom Rcpp sourceCpp\n#' @import data.table\n#' @import xgboost\n#' @import bnlearn\n#' @import CompareCausalNetworks\n#' @importFrom stats rbinom rnorm runif\n#' @importFrom utils setTxtProgressBar txtProgressBar\n#' @importFrom stats .lm.fit\n\"_PACKAGE\"\n",
+    "created" : 1505025987551.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3419177251",
+    "id" : "F040732D",
+    "lastKnownWriteTime" : 1505026506,
+    "last_content_update" : 1505026506,
+    "path" : "~/zhengproj/R/Project/self/R/self.R",
+    "project_path" : "R/self.R",
+    "properties" : {
+    },
+    "relative_order" : 13,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
