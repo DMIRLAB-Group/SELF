@@ -9,7 +9,7 @@ randomGraph(dim, indegree)
 \arguments{
 \item{dim}{The random graph dimension}
 
-\item{indegree}{The random graph indegree for each nodes}
+\item{indegree}{The average indegree of random graph for each nodes}
 }
 \value{
 Return a random graph
@@ -18,5 +18,5 @@ Return a random graph
 Generate a random graph based on the given dimension size and indegree
 }
 \examples{
-randomGraph(5,2)
+randomGraph(dim=10,indegree=1)
 }

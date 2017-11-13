@@ -28,11 +28,11 @@ compareG<-function(G1,G2){
 #' @title Generate a random graph
 #' @description Generate a random graph based on the given dimension size and indegree
 #' @param dim The random graph dimension
-#' @param indegree The random graph indegree for each nodes
+#' @param indegree The average indegree of random graph for each nodes
 #' @return Return a random graph
 #' @export
 #' @examples
-#' randomGraph(5,2)
+#' randomGraph(dim=10,indegree=1)
 randomGraph<-function(dim,indegree){
   G<-matrix(0,nrow=dim,ncol=dim)
   repeat{
@@ -54,11 +54,11 @@ randomGraph<-function(dim,indegree){
   #return(G)
 }
 #' @title synthetic nonlinear data base on the graph
-#' @description synthetic nonlinear data base on the graph. The data generation mechanism is y=scale(a1b1x^2+a2b2x^3+a3b3x^4+a4b4sin(x)+a5b5sin(x^2))
+#' @description synthetic nonlinear data base on the graph. The data generation mechanism is y=scale(a1b1x^2+a2b2x^3+a3b3x^4+a4b4sin(x)+a5b5sin(x^2)).
 #' @param G An adjacency matrix.
 #' @param sample_num The number of samples you want to synthetic
-#' @param ratio The noise ratio. It will grow or shrink the value of the noise
-#' @param return_noise Will return  the each node of the noise in the generating process for further analysis.
+#' @param ratio The noise ratio. It will grow or shrink the value of the noise.
+#' @param return_noise Whether return the noise of each nodes for further analysis.
 #' @return Return a synthetic data
 #' @export
 #' @examples
@@ -127,11 +127,11 @@ synthetic_data_nonlinear<-function(G,sample_num,ratio=1,return_noise=FALSE){
 }
 
 #' @title synthetic linear data base on the graph
-#' @description synthetic linear data base on the graph. The noise is sample from super-gaussian distribution. And the coefficient is sample from U(-1,-0.5),U(0.5,1)
+#' @description Synthetic linear data base on the graph. The noises are sampled from the super-gaussian distribution. The coefficients are sample from U(-1,-0.5),U(0.5,1)
 #' @param G An adjacency matrix.
 #' @param sample_num The number of samples you want to synthetic
 #' @param ratio The noise ratio It will grow or shrink the value of the noise
-#' @param return_noise Will return  the each node of the noise in the generating process for further analysis.
+#' @param return_noise Whether return the noise of each nodes for further analysis.
 #' @return Return a synthetic data
 #' @export
 #' @examples

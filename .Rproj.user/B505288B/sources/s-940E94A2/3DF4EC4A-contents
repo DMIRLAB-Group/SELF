@@ -13,7 +13,7 @@ Author: Ruichu Cai [ths],
     Zhenjie Zhang [ths],
     Zhifeng Hao [ths]
 Maintainer: Jie Qiao <qiaojie2004@vip.qq.com>
-Description: This Package provides SELF criteria to learn causal structure. Details of the algorithm can be found in "SELF: A Structural Equation Embedded Likelihood Framework for Causal Discovery"(AAAI 2018).
+Description: Provides the SELF criteria to learn causal structure. Details of the algorithm can be found in "SELF: A Structural Equation Embedded Likelihood Framework for Causal Discovery" (AAAI 2018).
 License: GPL-2
 LazyData: true
 Imports:

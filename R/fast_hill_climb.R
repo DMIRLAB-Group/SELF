@@ -144,6 +144,7 @@ updateScore_ml_cd<-function(G,D,NodeScore,nodes,score_type="bic",bw ="nrd0",boos
 #' @return The adjacency matrix of the casual structure.
 #' @export
 #' @examples
+#' \dontrun{
 #' #x->y->z
 #' set.seed(0)
 #' x=rnorm(4000)
@@ -161,7 +162,7 @@ updateScore_ml_cd<-function(G,D,NodeScore,nodes,score_type="bic",bw ="nrd0",boos
 #' fhc(data,booster = "lm")
 #'
 #'#randomGraph with linear data
-#'\dontrun{
+#'
 #'set.seed(0)
 #'G=randomGraph(dim=10,indegree=1.5)
 #'data=synthetic_data_linear(G=G,sample_num=4000)

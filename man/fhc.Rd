@@ -40,6 +40,7 @@ The adjacency matrix of the casual structure.
 The function for the causal structure learning.
 }
 \examples{
+\dontrun{
 #x->y->z
 set.seed(0)
 x=rnorm(4000)
@@ -57,7 +58,7 @@ data=data.frame(x,y,z)
 fhc(data,booster = "lm")
 
 #randomGraph with linear data
-\dontrun{
+
 set.seed(0)
 G=randomGraph(dim=10,indegree=1.5)
 data=synthetic_data_linear(G=G,sample_num=4000)

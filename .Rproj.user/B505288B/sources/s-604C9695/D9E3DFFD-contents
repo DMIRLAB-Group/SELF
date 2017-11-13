@@ -1,6 +1,8 @@
 ## Resubmission
 This is a resubmission. In this version I have:
-* fix the note on elapsed time > 10s by setting \dontrun on the examples.
+
+* omit the redundancy of "This Package" in Description.
+* add a space before "(AAAI ..." in Description.
 
 ## Test environments
 * local OS X install, R 3.4.2

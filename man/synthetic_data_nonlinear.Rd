@@ -11,15 +11,15 @@ synthetic_data_nonlinear(G, sample_num, ratio = 1, return_noise = FALSE)
 
 \item{sample_num}{The number of samples you want to synthetic}
 
-\item{ratio}{The noise ratio. It will grow or shrink the value of the noise}
+\item{ratio}{The noise ratio. It will grow or shrink the value of the noise.}
 
-\item{return_noise}{Will return  the each node of the noise in the generating process for further analysis.}
+\item{return_noise}{Whether return the noise of each nodes for further analysis.}
 }
 \value{
 Return a synthetic data
 }
 \description{
-synthetic nonlinear data base on the graph. The data generation mechanism is y=scale(a1b1x^2+a2b2x^3+a3b3x^4+a4b4sin(x)+a5b5sin(x^2))
+synthetic nonlinear data base on the graph. The data generation mechanism is y=scale(a1b1x^2+a2b2x^3+a3b3x^4+a4b4sin(x)+a5b5sin(x^2)).
 }
 \examples{
 G<-matrix(c(0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0),nrow = 4,ncol = 4)

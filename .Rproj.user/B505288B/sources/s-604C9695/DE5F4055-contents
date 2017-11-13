@@ -10,6 +10,7 @@ Details of the algorithm can be found in "SELF: A Structural Equation Embedded L
 
 ```{r, eval = FALSE}
 #install.packages("SELF")
+install.packages("devtools")
 devtools::install_github("DMIRLAB-Group/SELF")
 ```
 

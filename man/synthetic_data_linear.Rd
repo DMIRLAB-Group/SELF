@@ -13,13 +13,13 @@ synthetic_data_linear(G, sample_num, ratio = 1, return_noise = FALSE)
 
 \item{ratio}{The noise ratio It will grow or shrink the value of the noise}
 
-\item{return_noise}{Will return  the each node of the noise in the generating process for further analysis.}
+\item{return_noise}{Whether return the noise of each nodes for further analysis.}
 }
 \value{
 Return a synthetic data
 }
 \description{
-synthetic linear data base on the graph. The noise is sample from super-gaussian distribution. And the coefficient is sample from U(-1,-0.5),U(0.5,1)
+Synthetic linear data base on the graph. The noises are sampled from the super-gaussian distribution. The coefficients are sample from U(-1,-0.5),U(0.5,1)
 }
 \examples{
 G<-matrix(c(0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0),nrow = 4,ncol = 4)
