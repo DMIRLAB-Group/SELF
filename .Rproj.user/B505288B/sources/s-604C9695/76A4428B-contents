@@ -129,10 +129,10 @@ updateScore_ml_cd<-function(G,D,NodeScore,nodes,score_type="bic",bw ="nrd0",boos
 }
 #' @title Fast Hill-Climbing
 #' @description The function for the causal structure learning.
-#' @param D Input Data,your data require to be numeric.
+#' @param D Input Data.
 #' @param G An initial graph for hill climbing. Default: empty graph.
 #' @param min_increase Minimum score increase for faster convergence.
-#' @param score_type You can choise "bic","log","aic" score. Default: bic
+#' @param score_type You can choose "bic","log","aic" score to learn the causal struture. Default: bic
 #' @param file Specifies the output folder and its path to save the model at each iteration.
 #' @param verbose Show the progress bar for each iteration.
 #' @param save_model Save the meta data during the iteration so that you can easily restore progress and evaluate the model during iteration.

@@ -7,9 +7,9 @@
 indicators(pred, real)
 }
 \arguments{
-\item{pred}{Your predicted graph}
+\item{pred}{Predicted graph}
 
-\item{real}{Your real graph}
+\item{real}{Real graph}
 }
 \value{
 f1,precision,recall score.

@@ -7,14 +7,14 @@
     "folds" : "",
     "hash" : "0",
     "id" : "76A4428B",
-    "lastKnownWriteTime" : 1510571328,
-    "last_content_update" : 1510571328,
+    "lastKnownWriteTime" : 1511349710,
+    "last_content_update" : 1511349710,
     "path" : "~/GitLab/SELF/R/fast_hill_climb.R",
     "project_path" : "R/fast_hill_climb.R",
     "properties" : {
-        "cursorPosition" : "169,3",
+        "cursorPosition" : "146,11",
         "docOutlineVisible" : "1",
-        "scrollLine" : "157"
+        "scrollLine" : "145"
     },
     "relative_order" : 3,
     "source_on_save" : false,

@@ -9,13 +9,13 @@ fhc(D, G = NULL, min_increase = 0.01, score_type = "bic", file = "",
   gamma = 10, nrounds = 30, ...)
 }
 \arguments{
-\item{D}{Input Data,your data require to be numeric.}
+\item{D}{Input Data.}
 
 \item{G}{An initial graph for hill climbing. Default: empty graph.}
 
 \item{min_increase}{Minimum score increase for faster convergence.}
 
-\item{score_type}{You can choise "bic","log","aic" score. Default: bic}
+\item{score_type}{You can choose "bic","log","aic" score to learn the causal struture. Default: bic}
 
 \item{file}{Specifies the output folder and its path to save the model at each iteration.}
 

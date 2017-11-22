@@ -6,12 +6,12 @@
 \alias{SELF-package}
 \title{SELF: A Structural Equation Embedded Likelihood Framework for Causal Discovery}
 \description{
-Provides the SELF criteria to learn causal structure. Details of the algorithm can be found in "SELF: A Structural Equation Embedded Likelihood Framework for Causal Discovery" (AAAI 2018).
+Provides the SELF criteria to learn causal structure. Please cite "Ruichu Cai, Jie Qiao, Zhenjie Zhang, Zhifeng Hao. SELF: Structural Equational Embedded Likelihood Framework for Causal Discovery. AAAI,2018."
 }
 \author{
 \strong{Maintainer}: Jie Qiao \email{qiaojie2004@vip.qq.com}
 
-Other contributors:
+Authors:
 \itemize{
   \item Ruichu Cai \email{cairuichu@gmail.com} [thesis advisor]
   \item Zhenjie Zhang \email{zhenjie@adsc.com.sg} [thesis advisor]

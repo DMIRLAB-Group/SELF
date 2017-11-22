@@ -1,19 +1,19 @@
 Package: SELF
 Type: Package
 Title: A Structural Equation Embedded Likelihood Framework for Causal Discovery
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
-        person("Ruichu","Cai",email="cairuichu@gmail.com",role=c("ths")),
+        person("Ruichu","Cai",email="cairuichu@gmail.com",role=c("ths","aut")),
         person("Jie","Qiao",email="qiaojie2004@vip.qq.com",role=c("aut","cre")),
-        person("Zhenjie","Zhang",email="zhenjie@adsc.com.sg",role=c("ths")),
-        person("Zhifeng","Hao",email="zfhao@gdut.edu.cn",role=c("ths"))
+        person("Zhenjie","Zhang",email="zhenjie@adsc.com.sg",role=c("ths","aut")),
+        person("Zhifeng","Hao",email="zfhao@gdut.edu.cn",role=c("ths","aut"))
         )
-Author: Ruichu Cai [ths],
+Author: Ruichu Cai [ths, aut],
     Jie Qiao [aut, cre],
-    Zhenjie Zhang [ths],
-    Zhifeng Hao [ths]
+    Zhenjie Zhang [ths, aut],
+    Zhifeng Hao [ths, aut]
 Maintainer: Jie Qiao <qiaojie2004@vip.qq.com>
-Description: Provides the SELF criteria to learn causal structure. Details of the algorithm can be found in "SELF: A Structural Equation Embedded Likelihood Framework for Causal Discovery" (AAAI 2018).
+Description: Provides the SELF criteria to learn causal structure. Please cite "Ruichu Cai, Jie Qiao, Zhenjie Zhang, Zhifeng Hao. SELF: Structural Equational Embedded Likelihood Framework for Causal Discovery. AAAI,2018."
 License: GPL-2
 LazyData: true
 Imports:

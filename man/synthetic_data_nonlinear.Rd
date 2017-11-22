@@ -9,7 +9,7 @@ synthetic_data_nonlinear(G, sample_num, ratio = 1, return_noise = FALSE)
 \arguments{
 \item{G}{An adjacency matrix.}
 
-\item{sample_num}{The number of samples you want to synthetic}
+\item{sample_num}{The number of samples}
 
 \item{ratio}{The noise ratio. It will grow or shrink the value of the noise.}
 

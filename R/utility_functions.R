@@ -1,7 +1,7 @@
 #' @title Calculate the f1,precision,recall score of the graph
 #' @description Calculate the f1,precision,recall score of the graph
-#' @param pred Your predicted graph
-#' @param real Your real graph
+#' @param pred Predicted graph
+#' @param real Real graph
 #' @return f1,precision,recall score.
 #' @export
 #' @examples
@@ -26,23 +26,26 @@ compareG<-function(G1,G2){
 }
 
 #' @title Generate a random graph
-#' @description Generate a random graph based on the given dimension size and indegree
-#' @param dim The random graph dimension
+#' @description Generate a random graph based on the given dimension size and average indegree
+#' @param dim The dimension of the random graph
 #' @param indegree The average indegree of random graph for each nodes
+#' @param maxite The maximum iterations to find the random graph
 #' @return Return a random graph
 #' @export
 #' @examples
 #' randomGraph(dim=10,indegree=1)
-randomGraph<-function(dim,indegree){
+randomGraph<-function(dim,indegree,maxite=10000){
   G<-matrix(0,nrow=dim,ncol=dim)
-  repeat{
+  i=0
+  while (i<maxite){
+    i=i+1
     r=rbinom((dim*dim-dim)/2,1,indegree*2/(dim-1))
     if(sum(r)/dim==indegree){
       G[upper.tri(G)]<-r
       return(G)
     }
   }
-
+  stop(paste0("Could not find the graph with dimension=",dim,", average indegree=",indegree))
   # for(i in 2:dim){
   #   if(i<=indegree){
   #     G[1:(i-1),i]=1
@@ -56,7 +59,7 @@ randomGraph<-function(dim,indegree){
 #' @title synthetic nonlinear data base on the graph
 #' @description synthetic nonlinear data base on the graph. The data generation mechanism is y=scale(a1b1x^2+a2b2x^3+a3b3x^4+a4b4sin(x)+a5b5sin(x^2)).
 #' @param G An adjacency matrix.
-#' @param sample_num The number of samples you want to synthetic
+#' @param sample_num The number of samples
 #' @param ratio The noise ratio. It will grow or shrink the value of the noise.
 #' @param return_noise Whether return the noise of each nodes for further analysis.
 #' @return Return a synthetic data
@@ -129,7 +132,7 @@ synthetic_data_nonlinear<-function(G,sample_num,ratio=1,return_noise=FALSE){
 #' @title synthetic linear data base on the graph
 #' @description Synthetic linear data base on the graph. The noises are sampled from the super-gaussian distribution. The coefficients are sample from U(-1,-0.5),U(0.5,1)
 #' @param G An adjacency matrix.
-#' @param sample_num The number of samples you want to synthetic
+#' @param sample_num The number of samples
 #' @param ratio The noise ratio It will grow or shrink the value of the noise
 #' @param return_noise Whether return the noise of each nodes for further analysis.
 #' @return Return a synthetic data
