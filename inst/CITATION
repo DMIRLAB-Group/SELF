@@ -1,0 +1,14 @@
+citHeader("To cite SELF in publications use:")
+
+citEntry(entry = "inproceedings",
+  title        = "SELF: Structural Equational Embedded Likelihood Framework for Causal Discovery",
+  author       = personList(as.person("Ruichu Cai"),
+                   as.person("Jie Qiao"),
+                   as.person("Zhenjie Zhang"),
+                   as.person("Zhifeng Hao")),
+  booktitle    = "AAAI",
+  year         = "2018",
+  textVersion  = paste("Ruichu Cai, Jie Qiao, Zhenjie Zhang, Zhifeng Hao.",
+  "SELF: Structural Equational Embedded Likelihood Framework for Causal Discovery.",
+  "AAAI,2018.")
+)
